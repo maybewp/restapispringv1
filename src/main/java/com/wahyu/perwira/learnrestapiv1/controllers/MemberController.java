@@ -54,7 +54,7 @@ public class MemberController {
             return new ResponseEntity<>(map, HttpStatus.OK);
         } catch (Exception ex) {
             map.put("status", 0);
-            map.put("message", ex.getMessage());
+            map.put("message", ex.getMessage(x));
             map.put("data", null);
             return new ResponseEntity<>(map, HttpStatus.NOT_FOUND);
         }

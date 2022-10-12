@@ -11,6 +11,8 @@ public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "avatar")
+    private String avatar;
     @NotNull(message = "Fullname is Required")
     @Column(name = "fullname")
     private String fullname;
@@ -26,7 +28,8 @@ public class Member {
     public Member() {
     }
 
-    public Member(String fullname, String stageName, LocalDate birthday, int groupsId) {
+    public Member(String avatar, String fullname, String stageName, LocalDate birthday, int groupsId) {
+        this.avatar = avatar;
         this.fullname = fullname;
         this.stageName = stageName;
         this.birthday = birthday;
@@ -39,6 +42,14 @@ public class Member {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public String getFullname() {
